@@ -13,6 +13,7 @@
                 0 0 0 3vh white,
                 0 0 0 4vh black;
     overflow: hidden;
+    transition: transform 2.5s ease-in-out;
 }
 
 .wheel .element {
@@ -50,6 +51,7 @@
 
 .dial {
     display: flex;
+    top: 28vh;
     width: 7vh;
     aspect-ratio: 1;
     border-radius: 50%;

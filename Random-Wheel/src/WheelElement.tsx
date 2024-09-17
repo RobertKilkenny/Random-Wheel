@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import './WheelElement.css'
 import Option from "./Option.ts"
 
@@ -18,6 +19,16 @@ interface WheelElementProps {
 }
 
 const WheelElement: React.FC<WheelElementProps> = ({ elements }) => {
+    const [rotation, setRotation] = useState(0);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            const newRotation = Math.ceil(Math.random() * 3600);
+            setRotation(newRotation);
+        }, 1000);
+        return () => clearTimeout(timer);
+    }, []);
+
     const list = (
         <>
           {
@@ -38,14 +49,16 @@ const WheelElement: React.FC<WheelElementProps> = ({ elements }) => {
           ))}
         </>
       );
-    return (
-        <div className="wheel">
-            <div className='dial-holder'>
-            </div>
+    return (<>
+        <div className="wheel" style={{ transform: `rotate(${rotation}deg)` }}>
             {list}
+        </div>
+        <div className='dial-holder'>
             <div className='dial' />
             <div className='pointer' />
         </div>
+    </>
+
     )
   }
   
