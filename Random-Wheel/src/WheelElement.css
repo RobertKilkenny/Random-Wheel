@@ -47,11 +47,12 @@
 
 .dial-holder {
     display: flex;
+    position: absolute;
+    top: 53vh;
 }
 
 .dial {
     display: flex;
-    top: 28vh;
     width: 7vh;
     aspect-ratio: 1;
     border-radius: 50%;
@@ -63,10 +64,10 @@
 .dial::before {
     content: '';
     position: absolute;
-    top: -4vh;
-    left: calc(50% - 1vw);
-    width: 2vw;
-    height: 5vh;
+    top: -5.5vh;
+    left: calc(50% - 1.5vw);
+    width: 3vw;
+    height: 7vh;
     background: white;
     clip-path: polygon(50% 0%, 15% 100%, 85% 100%);
 }
