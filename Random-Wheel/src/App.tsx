@@ -11,7 +11,7 @@ function App() {
   return (
     <div id='Website Holder' className='site-holder'>
       <div className='page-holder'>
-        <h2>Spin That Wheel!</h2>
+        <span className='web-title'>Spin that Wheel!</span>
           <WheelElement elements={elements}/>
       </div>
     </div>

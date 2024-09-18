@@ -16,15 +16,23 @@ const clipReference = new Map<number, string>([
 
 interface WheelElementProps {
     elements: Option[];
+    cheat: number;
 }
 
-const WheelElement: React.FC<WheelElementProps> = ({ elements }) => {
+const WheelElement: React.FC<WheelElementProps> = ({ elements, cheat = -1 }) => {
     const [rotation, setRotation] = useState(0);
+    const wheelAngle = 360 / (elements.length);
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            const newRotation = Math.ceil(Math.random() * 3600);
-            setRotation(newRotation);
+          if(cheat == -1){
+            cheat = Math.round(Math.random() * (elements.length - 1)) + 1;
+          }
+          const randRotatCount = Math.ceil(Math.random() * 15) + 10;
+          const shift = Math.floor(Math.random() * wheelAngle * 11 / 12 + wheelAngle / 24);
+          const newRotation = Math.ceil((cheat - 2) * wheelAngle + randRotatCount * 360 + shift);
+          setRotation(newRotation);
+          console.log(`Element ${cheat} was chosen.\ntotal: ${newRotation}`);
         }, 1000);
         return () => clearTimeout(timer);
     }, []);
@@ -39,7 +47,7 @@ const WheelElement: React.FC<WheelElementProps> = ({ elements }) => {
               className="element"
               style={{ '--i': index.toString(),
                 '--clr': element.color,
-                '--deg': (360 / (elements.length)).toString() + "deg",
+                '--deg': wheelAngle.toString() + "deg",
                 '--clip': clipReference.get(elements.length)} as React.CSSProperties}
             >
               <span>
@@ -50,7 +58,7 @@ const WheelElement: React.FC<WheelElementProps> = ({ elements }) => {
         </>
       );
     return (<>
-        <div className="wheel" style={{ transform: `rotate(${rotation}deg)` }}>
+        <div className="wheel" style={{ transform: `rotate(${-rotation}deg)` }}>
             {list}
         </div>
         <div className='dial-holder'>
