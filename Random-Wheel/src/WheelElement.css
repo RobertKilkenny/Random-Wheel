@@ -1,22 +1,28 @@
-.wheel {
+.wheel-holder {
     display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    top: 23vh;
+    flex-direction: column;
     flex-grow: 1;
     aspect-ratio: 1;
-    width: 70vh;
+    position: relative;
+  }
+  
+  .wheel {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     background-color: black;
-    box-shadow: 0 0 0 1vh black,
-                0 0 0 3vh white,
-                0 0 0 4vh black;
+    box-shadow: 0 0 0 1vh black, 0 0 0 3vh white, 0 0 0 4vh black;
     overflow: hidden;
     transition: transform 4s ease-in-out;
-}
-
-.wheel .element {
+  }
+  
+  .wheel .element {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -29,54 +35,51 @@
     transform-origin: bottom right;
     transform: rotate(calc(var(--deg) * var(--i)));
     clip-path: polygon(0 0, var(--clip) 0, 99% 99%, 0% var(--clip));
-}
-
-.wheel .element span {
-    position: relative;
+  }
+  
+  .wheel .element span {
+    position: absolute;
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     font-weight: 700;
     color: white;
     text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.2);
-    transform: rotate(50deg);
-}
-
-
-.dial-holder {
+    transform: rotate(45deg);
+  }
+  
+  .dial-holder {
     display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    top: 53vh;
-}
-
-.dial {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .dial {
     display: flex;
-    width: 7vh;
-    aspect-ratio: 1;
+    position: relative;
+    flex-direction: column;
+    width: 5%;
+    height: 5%;
     border-radius: 50%;
     background-color: white;
-    border: 5px solid black;
-    position: relative;
-}
-
-.dial::before {
+    border: .8vh solid black;
+  }
+  
+  .dial::before {
     content: '';
-    position: absolute;
-    top: -5.5vh;
-    left: calc(50% - 1.5vw);
-    width: 3vw;
-    height: 7vh;
+    position: relative;
+    left: 19.5%;
+    width: 60%;
+    top: calc(-1 * max(2vh, 2vw));
+    height: max(3vh, 3vw);
     background: white;
     clip-path: polygon(50% 0%, 15% 100%, 85% 100%);
-}
-
-.done-holder {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.done-holder .done-bar {
-    background-color: black;
-    color: var(--clr);
-}
+  }
