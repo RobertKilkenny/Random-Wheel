@@ -13,7 +13,7 @@
                 0 0 0 3vh white,
                 0 0 0 4vh black;
     overflow: hidden;
-    transition: transform 2.5s ease-in-out;
+    transition: transform 4s ease-in-out;
 }
 
 .wheel .element {
@@ -70,4 +70,13 @@
     height: 7vh;
     background: white;
     clip-path: polygon(50% 0%, 15% 100%, 85% 100%);
+}
+
+.done-holder {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.done-holder .done-bar {
+    background-color: black;
+    color: var(--clr);
 }
