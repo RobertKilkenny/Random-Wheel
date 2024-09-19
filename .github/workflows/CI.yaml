@@ -30,8 +30,6 @@ jobs:
         run: rm -rf docs
       - name: Change "dist" to "docs"
         run: mv dist docs
-      - name: Add site details to CNAME
-        run: echo kilkenny.dev > docs/CNAME
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
