@@ -4,10 +4,10 @@ on:
   workflow_run:
     push:
       branches:
-        - master
+        - main
     pull_request:
       branch:
-        - master
+        - main
     workflows: 
       - "Check Master for Build"
     types:
