@@ -35,6 +35,7 @@
     transform-origin: bottom right;
     transform: rotate(calc(var(--deg) * var(--i)));
     clip-path: polygon(0 0, var(--clip) 0, 99% 99%, 0% var(--clip));
+    font-size: 30px;
   }
   
   .wheel .element span {
