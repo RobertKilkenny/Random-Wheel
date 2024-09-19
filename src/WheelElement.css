@@ -1,6 +1,6 @@
 .wheel-holder {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-grow: 1;
     aspect-ratio: 1;
     min-width: 250px;
