@@ -41,7 +41,7 @@ const WheelElement: React.FC<WheelElementProps> = ({ elements, cheat = -1, decla
         return () => clearTimeout(doneTimer);
         }, 1000);
         return () => clearTimeout(timer);
-    }, [cheat, declareWinner, elements, length, wheelAngle]);
+    }, [elements]);
 
     const list = (
         <>
