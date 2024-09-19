@@ -3,7 +3,7 @@
     flex-direction: column;
     flex-grow: 1;
     aspect-ratio: 1;
-    min-width: 500px;
+    min-width: 250px;
     position: relative;
   }
   
