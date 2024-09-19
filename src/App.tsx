@@ -54,7 +54,7 @@ function App() {
                 setCheat(Number(queryCheat));
             }
         }
-    }, [queryElements]);
+    }, [queryElements, queryCheat]);
 
     return (
         <div id='Website Holder' className='site-holder'>

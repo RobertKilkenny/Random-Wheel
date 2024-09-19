@@ -35,18 +35,13 @@ const WheelElement: React.FC<WheelElementProps> = ({ elements, cheat = -1, decla
           const driftFix = length != 4 ? (length - 4) / 8 * wheelAngle : 0;
           const newRotation = Math.ceil((cheat - 2) * wheelAngle - driftFix + randRotatCount * 360 + shift);
           setRotation(newRotation);
-          console.log(`Element ${cheat} has won\nShift: ${shift}\nAngle: ${wheelAngle}\n\nList:`);
-          for(let i = 0; i < length; i++){
-            console.log(`\n${i+1}. ${elements[i].description} -> color: ${elements[i].color}`)
-          }
-          console.log
           const doneTimer = setTimeout(() => {
             declareWinner(elements[cheat - 1]);
           }, 5000);
         return () => clearTimeout(doneTimer);
         }, 1000);
         return () => clearTimeout(timer);
-    }, []);
+    }, [cheat, declareWinner, elements, length, wheelAngle]);
 
     const list = (
         <>
