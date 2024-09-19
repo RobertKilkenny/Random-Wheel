@@ -6,7 +6,7 @@
   "homepage": "https://RobertKilkenny.github.io",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
