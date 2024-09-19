@@ -14,4 +14,4 @@ For example, if you want to choose between
 - Diary Queen (Blue)
 - Leftovers (No specific color)
 
-You would add `https://robertkilkenny.github.io/RandomWheel/?elements=F00-McDonalds,FF0-Burger King,0F0-Subway,00F-Diary Queen,Leftovers` to the search bar.
+You would add `https://robertkilkenny.github.io/Random-Wheel/?elements=F00-McDonalds,FF0-Burger King,0F0-Subway,00F-Diary Queen,Leftovers` to the search bar.
