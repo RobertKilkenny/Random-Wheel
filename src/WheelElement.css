@@ -3,9 +3,9 @@
     flex-direction: row;
     aspect-ratio: 1;
     height: 35%;
-    min-height:250px;
+    min-height:500px;
     width: 35%;
-    min-width: 250px;
+    min-width: 500px;
     position: relative;
   }
   
